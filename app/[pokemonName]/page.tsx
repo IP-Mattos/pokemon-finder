@@ -9,6 +9,7 @@ import Image from 'next/image'
 
 export default async function PokemonPage({ params }: { params: { pokemonName: string } }) {
   // Object destructuring
+
   const { pokemonName } = params
   const Pokemon: Pokemon = await getPokemon(pokemonName)
 
@@ -22,13 +23,13 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
       </div>
       <h3>Weight: {Pokemon.weight}</h3>
       <h3>Height: {Pokemon.height}</h3>
-      <div className='flex-cols w-full'>
+      <div className='w-full'>
         {Pokemon.stats.map((stat) => {
           const statName = stat.stat.name
           const statValue = stat.base_stat
           return (
-            <div className='flex items-stretch' style={{ width: '100%' }} key={statName}>
-              <h3 className='p-3 w-2/4'>
+            <div className='flex-cols md:flex ' style={{ width: '100%' }} key={statName}>
+              <h3 className='p-3 md:w-2/4 w-full text-center md:text-justify'>
                 {statName}: {statValue}
               </h3>
               <Progress className='w-2/4 m-auto' value={statValue} />
