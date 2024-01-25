@@ -16,18 +16,18 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
 
   return (
     <>
-      <h1 className='text-4xl text-bold pt-4 text-center capitalize'>{Pokemon.name}</h1>
+      <h1 className='text-1xl text-bold pt-4 text-center capitalize'>{Pokemon.name}</h1>
       <div className='m-4' style={{ position: 'relative', width: '300px', height: '300px' }}>
         <PokemonImage image={Pokemon.sprites.front_default} name={Pokemon.name} />
       </div>
       <h3>Weight: {Pokemon.weight}</h3>
       <h3>Height: {Pokemon.height}</h3>
-      <div className='flex-col'>
+      <div className='flex-cols w-full'>
         {Pokemon.stats.map((stat) => {
           const statName = stat.stat.name
           const statValue = stat.base_stat
           return (
-            <div className='flex items-stretch' style={{ width: '500px' }} key={statName}>
+            <div className='flex items-stretch' style={{ width: '100%' }} key={statName}>
               <h3 className='p-3 w-2/4'>
                 {statName}: {statValue}
               </h3>
