@@ -23,12 +23,12 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
       </div>
       <h3>Weight: {Pokemon.weight}</h3>
       <h3>Height: {Pokemon.height}</h3>
-      <div className='w-full'>
+      <div className='w-[100%] md:w-2/4   '>
         {Pokemon.stats.map((stat) => {
           const statName = stat.stat.name
           const statValue = stat.base_stat
           return (
-            <div className='flex-cols md:flex ' style={{ width: '100%' }} key={statName}>
+            <div className='flex-cols md:flex' style={{ width: '100%' }} key={statName}>
               <h3 className='p-3 md:w-2/4 w-full text-center md:text-justify'>
                 {statName}: {statValue}
               </h3>
