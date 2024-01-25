@@ -70,7 +70,7 @@ export async function getPokemon(name: string) {
     weight: 69
   }
 
-  if (name === 'gotica') return mock
+  if (name === 'gotica en proceso dice ser...') return mock
   const response = await fetch(`${POKEMON_API_URL}pokemon/${name}`)
   const data: Pokemon = await response.json()
 
