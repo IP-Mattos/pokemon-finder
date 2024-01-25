@@ -20,7 +20,7 @@ export function PokemonCard({ name, url }: PokemonCardProps) {
       <img
         className='w-full'
         src={
-          name === 'gotica en proceso 😦'
+          name === 'gotica'
             ? url
             : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${url.split('/')[6]}.png`
         }

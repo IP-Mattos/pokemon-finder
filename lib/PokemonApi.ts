@@ -7,7 +7,7 @@ export async function getPokemonList() {
   const response = await fetch(`${POKEMON_API_URL}pokemon?offset=0&limit=151`)
   const data: Pokemons = await response.json()
   const mock: Result = {
-    name: 'gotica en proceso 😦',
+    name: 'gotica',
     url: '/gotica.jpg'
   }
   data.results.push(mock)
@@ -70,7 +70,7 @@ export async function getPokemon(name: string) {
     weight: 69
   }
 
-  if (name === 'gotica en proceso dice ser...') return mock
+  if (name === 'gotica') return mock
   const response = await fetch(`${POKEMON_API_URL}pokemon/${name}`)
   const data: Pokemon = await response.json()
 
