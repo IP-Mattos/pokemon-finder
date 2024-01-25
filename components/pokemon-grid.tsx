@@ -38,11 +38,18 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
         </div>
         <h3 className='text-3xl pt-12 pb-6 text-center'>Pokemon Collection</h3>
       </div>
-      <div className='mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left'>
-        {filteredPokemonList.map((pokemon: Result, index) => {
-          return <PokemonCard name={pokemon.name} key={index} url={pokemon.url} />
-        })}
-      </div>
+
+      {filteredPokemonList.length > 0 ? (
+        <div className='mb-32 grid text-center lg:max-w-5xl  lg:w-full lg:mb-0 lg:grid-cols-3  sm:w-[300px]'>
+          {filteredPokemonList.map((pokemon: Result, index) => {
+            return <PokemonCard name={pokemon.name} key={index} url={pokemon.url} />
+          })}
+        </div>
+      ) : (
+        <div className=' flex w-full items-center justify-center'>
+          <p className='text-center'>Pokemon Not Found :(</p>
+        </div>
+      )}
     </>
   )
 }
